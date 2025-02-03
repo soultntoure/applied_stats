@@ -2,4 +2,4 @@ __pycache__/
 *.pyc
 *.pyo
 *.DS_Store
-data/credit_card_transactions.csv
+data\credit_card_transactions.csv
