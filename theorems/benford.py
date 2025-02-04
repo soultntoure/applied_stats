@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 
 # These are my avialable datasets
 preloaded_datasets = {
-    "Credit Card Transactions": "data/credit_card_transactions.csv",
-    "Invoices Dataset (Synthetic)": "data/invoices_synthetic.csv"
+    "Invoices Dataset (Synthetic)": "data/invoices_synthetic.csv",
+    "Credit Card Transactions": "data/credit_card_transactions.csv"
 }
 
 dataset_sources = {
