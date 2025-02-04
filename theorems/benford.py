@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Predefined datasets
+# These are my avialable datasets
 preloaded_datasets = {
     "Credit Card Transactions": "data/credit_card_transactions.csv",
     "Invoices Dataset (Synthetic)": "data/invoices_synthetic.csv"
@@ -53,7 +53,7 @@ def analyze_fraud_risk(observed, dataset_name):
     else:
         return "✅ Low Deviation: Data follows Benford’s Law closely."
 
-def run():
+def benford_page():
     st.title("Fraud Detection using Benford's Law")
     
     # Introduction
@@ -71,7 +71,7 @@ def run():
     st.write("- The dataset should contain a sufficiently large sample size for statistical validity.")
     st.write("- The numbers should represent naturally occurring values rather than assigned identifiers.")
     
-    # Display Benford Distribution Image before dataset selection
+
     st.image("images/Benf_dist.png", caption="Expected Benford's Law Distribution", use_container_width=True)
     
     # Option to choose between available datasets and uploading
