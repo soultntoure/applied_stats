@@ -68,10 +68,11 @@ def bayes_page():
     st.write("### Analysis of Results and Discussion")
     
     if posterior < 0.2:
-        st.write("The posterior probability is relatively low, indicating that even with a positive test result, the likelihood of having the disease remains low. This is often the case for rare diseases where the prior probability is small, and despite a good test, false positives are still more common than true positives.")
+        st.write("The posterior probability is quite low. This means that even though the test came back positive, the chance that you actually have the disease is still low. For rare diseases like **Huntington's disease**, where very few people have it, even a highly accurate test might give a false positive more often than a true positive. So, despite a positive result, the disease is still unlikely.")
     elif posterior < 0.8:
-        st.write("The posterior probability is moderate, suggesting that while the test result is informative, further confirmation may be needed. This is common for conditions with medium prevalence where test accuracy plays a significant role.")
+        st.write("The posterior probability is moderate. Here, a positive test result gives us some useful information, but we might want to confirm it with additional tests. This situation is common for diseases that are not rare, like **Type 2 diabetes**. The test results start to give a clearer picture, but the accuracy of the test (sensitivity and specificity) still affects the reliability of the result.")
     else:
-        st.write("The posterior probability is high, suggesting that a positive test result strongly indicates the presence of the disease. In such cases, the prior probability is typically higher, and the test's accuracy helps reinforce the conclusion.")
+        st.write("The posterior probability is high. In this case, a positive test result strongly suggests that you likely have the disease. For diseases that are more common, like **Hypertension**, where the prevalence is higher, the test's sensitivity and specificity really help make the result more reliable. A positive result in this case means the disease is more likely present.")
     
-    st.write("This analysis highlights the importance of considering prior probability, sensitivity, and specificity when interpreting test results. A positive test alone is not always definitive, and further diagnostic evaluation may be required.")
+    st.write("This analysis shows why it's so important to consider the disease's rarity, test sensitivity, and specificity when interpreting results. A positive test doesn't always mean you have the disease, especially for rare conditions where further tests are needed for confirmation.")
+
