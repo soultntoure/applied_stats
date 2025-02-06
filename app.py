@@ -3,7 +3,7 @@ from theorems import benford, bayes
 
 # Sidebar Navigation
 st.sidebar.title("Statistical Analysis App")
-page = st.sidebar.radio("Choose Analysis:", ["Home", "Benford's Law", "Bayes' Theorem", "Future Theorems"])
+page = st.sidebar.radio("Choose Analysis:", ["Home", "Benford's Law", "Bayes' Theorem", "Zipf law"])
 
 # Routing to Different Pages
 if page == "Home":

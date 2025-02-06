@@ -14,6 +14,7 @@ dataset_sources = {
     "Invoices Dataset (Synthetic)": "https://www.kaggle.com/datasets/cankatsrc/invoices"
 }
 
+#This function extracts the first digit from numerical data and calculates its frequency distribution.
 def first_digit_distribution(data):
     first_digits = data.astype(str).str[0].astype(int)
     return first_digits.value_counts(normalize=True).sort_index()
@@ -40,18 +41,18 @@ def plot_benford_analysis(observed, dataset_name, is_preloaded):
 
 def analyze_fraud_risk(observed, dataset_name):
     deviations = np.abs(observed - benford_expected)
-    max_deviation = np.max(deviations)
+    total_deviation = np.sum(deviations)
     
     if dataset_name == "Invoices Dataset (Synthetic)":
         return "### Conclusion for the Invoice Dataset\n- The observed first digit distribution in the **Invoice Dataset** shows a uniform distribution across digits 1 to 9.\n- This significantly deviates from the expected distribution under **Benford’s Law**, where we typically expect smaller digits (e.g., 1, 2, 3) to occur more frequently.\n\n#### Implications:\n- **Potential Data Manipulation**: The uniform distribution might suggest fraud or manipulation, but in this case, it is due to the **randomness of the synthetic dataset**.\n- **Flat Distribution**: A flat first-digit distribution is rare in real-world financial data, reinforcing that this dataset is **artificially generated**.\n- If such a distribution appears in real-world financial data, it could be a strong indicator of fraud or manipulation."
     elif dataset_name == "Credit Card Transactions":
         return "### Observations:\n- The observed distribution of first digits shows a generally good alignment with Benford's Law, particularly for the lower digits (1, 2, 3, etc.).\n- While there is some minor deviation, especially with the first digit \"1\", the distribution closely resembles what we would expect from a naturally occurring financial dataset.\n\n### Implications:\n- The small deviations from Benford's Law are not necessarily indicative of fraud or manipulation but could be the result of specific **business practices or rounding conventions** in the dataset.\n- The dataset follows a legitimate pattern, with **no major signs of manipulation**."
-    elif max_deviation > 0.05:
-        return "⚠️ High Deviation Detected: Possible fraud risk!"
-    elif max_deviation > 0.02:
-        return "⚠️ Moderate Deviation: Further investigation recommended."
+    elif total_deviation > 0.3:
+        return f"⚠️ High Deviation Detected: Possible fraud risk!"
+    elif total_deviation > 0.12:
+        return f"📢 Moderate Deviation: Further investigation recommended."
     else:
-        return "✅ Low Deviation: Data follows Benford’s Law closely."
+        return f"✅ Low Deviation: Data follows Benford’s Law closely."
 
 def benford_page():
     st.title("Fraud Detection using Benford's Law")
