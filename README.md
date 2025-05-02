@@ -2,11 +2,11 @@
 
 **Applied Theorems** is an interactive web application designed to **explore, exemplify, and visualize mathematical, statistical, and algorithmic theorems**. The project aims to bridge the gap between **theoretical concepts and real-world applications**, making complex ideas intuitive through **interactive simulations, real datasets, and insightful visualizations**.
 
-We started with two foundational theorems:  
+I started with two foundational theorems:  
 ✅ **Benford’s Law** – Used for **fraud detection and anomaly analysis**.  
 ✅ **Bayes' Theorem** – Applied in **medical diagnosis, risk assessment, and probabilistic decision-making**.
 
-This is just the beginning—we plan to expand the project with more theorems that have significant real-world implications! 🚀
+This is just the beginning, we plan to expand the project with more theorems that have significant real-world implications! 🚀
 
 ---
 
@@ -26,7 +26,6 @@ Benford’s Law states that in many naturally occurring datasets, the **leading 
 🔹 **Features Implemented:**  
 ✅ **Upload Your Own Dataset** – Users can upload financial or transaction data for analysis.  
 ✅ **Preloaded Datasets** – Includes a **synthetic invoice dataset** and a **real-world credit card transaction dataset**.  
-✅ **Chi-Square Test for Fraud Detection** – Instead of basic deviation detection, we now use the **Chi-Square test** to statistically evaluate how well a dataset follows Benford’s distribution.  
 ✅ **Interactive Data Visualization** – Side-by-side comparison of **expected vs observed first-digit distributions**.  
 ✅ **Dynamic Fraud Risk Assessment** – Classifies datasets into **low, moderate, or high risk** based on statistical deviation.
 
